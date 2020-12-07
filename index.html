@@ -30,7 +30,7 @@ main{margin-left:10px;margin-right:10px;}
         <div class="box-body">
         {% if post.image %}
         {% include new-post-tag.html date=post.date %}
-            <a href="{{ post.url }}" {%if isnewpost %}class="novo-post"{% endif %}>
+            <a href="{{ site.url }}{{ post.url }}" {%if isnewpost %}class="novo-post"{% endif %}>
                 <img src="https://i.imgur.com/z2qp1YM.png" data-url="{{ post.image }}" alt="{{ post.descricao }}" class="preload">
             </a>
             <p class="tempo-post"><script>
@@ -40,7 +40,7 @@ document.write(secondsToHms({{ post.duracao }}));
             </p>
         {% endif %}
             <div class="box-info">
-                <a class="link-post" href="{{ post.url | prepend: site.baseurl }}">
+                <a class="link-post" href="{{ site.url }}{{ post.url | prepend: site.baseurl }}">
                     <h2 class="titulo" itemprop="name">{{ post.title }}</h2>
                 </a>
                 <div class="data-post">
